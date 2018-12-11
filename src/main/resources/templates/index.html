@@ -71,8 +71,8 @@
             </div>
             <div class="col-sm-2" id="qlang">
                 <select class="form-control" name="Language">
+                    <option value="es" selected="selected">Español</option>
                     <option value="en">Inglés</option>
-                    <option value="es">Español</option>
                     <option value="fr">Francés</option>
                     <option value="ca">Catalán</option>
                     <option value="ru">Ruso</option>
@@ -82,7 +82,17 @@
         </div>
         <div class="row">&nbsp;</div>
         <div class="row">
-            <button class="btn btn-default center-block" type="submit">Buscar</button>
+            <div class="col-sm-8" id="qsort">
+                <select class="form-control" name="Sort">
+                    <option value="none" selected="selected">Sin ordenar</option>
+                    <option value="f_asc">Menos seguidores primero</option>
+                    <option value="f_desc">Mas seguidores primero</option>
+                    <option value="n_asc">Alfabeticamente nombre de usuario [A-Z]</option>
+                    <option value="n_desc">Alfabeticamente nombre de usuario [Z-A]</option>
+                </select>
+            </div>
+            
+            <button class="btn btn-default col-sm-2" type="submit">Buscar</button>
         </div>
     </form>
     <div class="row">&nbsp;</div>
