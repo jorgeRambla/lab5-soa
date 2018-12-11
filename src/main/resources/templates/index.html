@@ -26,7 +26,36 @@
             th:src="@{/webjars/mustache.js/mustache.js}"></script>
     <!-- Icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+        body.dark-mode {
+        background-color: rgb(56, 49, 49);
+        color: #eee;
+        }
+        body.dark-mode a {
+        color: rgb(56, 49, 49);
+        }
+        body.dark-mode button {
+        background-color: #eee;
+        color: rgb(56, 49, 49);
+        }
+        body.dark-mode p {
+        color: #111;
+        }
 
+        body.light-mode {
+        background-color: #eee;
+        color: #111;
+        }
+        body.light-mode a {
+        color: #111;
+        }
+        body.light-mode button {
+        color: #111;
+        }
+        body.light-mode p {
+        color: #111;
+        }
+    </style>
     <!-- Latest compiled and minified JavaScript -->
     <script id="template" type="x-tmpl-mustache">
 {{#.}}
@@ -47,7 +76,7 @@
     Followers count: {{user.followersCount}}
    </div>
   </div>
-  <div class="panel-body">{{text}}</div>
+  <div class="panel-body"><p>{{text}}</p></div>
  </div>
  {{/.}}
 
@@ -57,7 +86,7 @@
 
 
 </head>
-<body>
+<body id="body" class="dark-mode">
 <nav class="navbar navbar-default" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -70,6 +99,13 @@
     </div>
 </nav>
 <div class="container">
+    <div class="row">
+        <button class="btn btn-default pull-right" type="button" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">
+            Change to dark mode
+        </button>
+    </div>
+    <div class="row">&nbsp;</div>
+
     <!-- Formulario principal -->
     <form action="search" id="search" method="get">
         <div class="row">
