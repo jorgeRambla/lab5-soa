@@ -61,8 +61,20 @@
     <!-- Formulario principal -->
     <form action="search" id="search" method="get">
         <div class="row">
-            <input class="form-control" id="q" name="q" placeholder="Escribe algo que quieras buscar"
+            <div class="col-sm-8">
+                <input class="form-control" id="q" name="q" placeholder="Escribe algo que quieras buscar"
                    type="text"/>
+            </div>
+            <div class="col-sm-2">
+                <input class="form-control" id="qcount" name="qcount" placeholder="Cantidad de resultados"
+                    type="text"/>
+            </div>
+            <div class="col-sm-2" id="qlang">
+                <select class="form-control" name="Language">
+                    <option value="en">Inglés</option>
+                    <option value="es">Español</option>
+                </select>
+            </div>
         </div>
         <div class="row">&nbsp;</div>
         <div class="row">
