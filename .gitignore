@@ -32,3 +32,10 @@ hs_err_pid*
 application.properties
 *.iml
 /out/
+.classpath
+.settings/
+bin/
+.gitignore
+.project
+.vscode/launch.json
+.vscode/launch.json
