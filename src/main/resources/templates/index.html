@@ -24,13 +24,25 @@
     <script
             src="https://maxcdn.bootstrapcdn.com/mustachejs/0.8.2/mustache.js"
             th:src="@{/webjars/mustache.js/mustache.js}"></script>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <!-- Latest compiled and minified JavaScript -->
     <script id="template" type="x-tmpl-mustache">
 {{#.}}
  <div class="row panel panel-default">
   <div class="panel-heading">
-   <a href="https://twitter.com/{{user.screenName}}" target="_blank"><b>@{{user.screenName}}</b></a>
+   <a href="https://twitter.com/{{user.screenName}}" target="_blank">
+     <b>
+       @{{user.screenName}}
+        {{#user.verified}}
+            <i class="fas fa-check-circle"></i> <!-- User is verified -->
+        {{/user.verified}}
+        {{^user.verified}}
+            <!-- User isn't verified -->
+        {{/user.verified}}
+     </b>
+    </a>
    <div class="pull-right">
     Followers count: {{user.followersCount}}
    </div>
@@ -66,12 +78,13 @@
                    type="text"/>
             </div>
             <div class="col-sm-2">
-                <input class="form-control" id="qcount" name="qcount" placeholder="Cantidad de resultados"
-                    type="text"/>
+                <input class="form-control" id="qcount" name="qcount" placeholder="10"
+                    type="number" min="1"/>
             </div>
             <div class="col-sm-2" id="qlang">
                 <select class="form-control" name="Language">
-                    <option value="es" selected="selected">Español</option>
+                    <option value="none" selected="selected">Todos</option>
+                    <option value="es">Español</option>
                     <option value="en">Inglés</option>
                     <option value="fr">Francés</option>
                     <option value="ca">Catalán</option>
