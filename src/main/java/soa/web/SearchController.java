@@ -36,7 +36,9 @@ public class SearchController {
     Map<String, Object> headers = new HashMap<String, Object>();
     headers.put("CamelTwitterKeywords", q);
     headers.put("CamelTwitterCount", count);
-    headers.put("CamelTwitterSearchLanguage", lang);
+    if(lang.length() == 2) { //If not language selected, search all languages
+      headers.put("CamelTwitterSearchLanguage", lang);
+    }
     return producerTemplate.requestBodyAndHeaders("direct:search", "", headers);
   }
 }
